@@ -2,15 +2,29 @@
   "name": "@pkwadsy/eslint-plugin-kint",
   "version": "0.0.1",
   "description": "Runs kint validation rules as part of eslint",
-  "main": "eslint-plugin-kint.js",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "npx tsup eslint-plugin/lib",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
   "peerDependencies": {
     "eslint": ">=9.0.0"
   },
-  "scripts": {
-    "test": "echo \"No tests yet\" && exit 0"
-  },
   "dependencies": {
+    "@typescript-eslint/types": "^7.13.1",
+    "@typescript-eslint/utils": "^7.13.1",
     "eslint": "^9.5.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.56.10",
+    "@types/node": "^20.14.5",
+    "@typescript-eslint/rule-tester": "^7.13.1",
+    "eslint-doc-generator": "^1.7.1",
+    "typescript": "^5.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
