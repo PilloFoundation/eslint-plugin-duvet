@@ -6,7 +6,7 @@
   "exports": "./dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "npx tsup eslint-plugin/lib",
+    "build": "rimraf ./dist && tsc --outDir dist",
     "test": "echo \"No tests yet\" && exit 0"
   },
   "peerDependencies": {
@@ -22,6 +22,7 @@
     "@types/node": "^20.14.5",
     "@typescript-eslint/rule-tester": "^7.13.1",
     "eslint-doc-generator": "^1.7.1",
+    "rimraf": "^5.0.7",
     "typescript": "^5.4.5"
   },
   "publishConfig": {
