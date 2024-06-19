@@ -1,7 +1,16 @@
-import fs from "fs";
+const fs = require("fs");
+
+const fooBarRule = require("./enforce-foo-bar");
+const paramsRules = require("./enforce-params-specified");
 
 const pkg = JSON.parse(
-  fs.readFileSync(new URL("./package.json", import.meta.url), "utf8")
+  fs.readFileSync(
+    new URL(
+      "./package.json",
+      require("url").pathToFileURL(__filename).toString()
+    ),
+    "utf8"
+  )
 );
 
 const plugin = {
@@ -12,7 +21,8 @@ const plugin = {
   },
   configs: {},
   rules: {
-    // add rules here
+    "enforce-foo-bar": fooBarRule,
+    "enforce-params-specified": paramsRules,
   },
 };
 
@@ -21,23 +31,19 @@ Object.assign(plugin.configs, {
   recommended: [
     {
       plugins: {
-        example: plugin,
+        "eslint-kint": plugin,
       },
       rules: {
-        "example/dollar-sign": "error",
+        "eslint-kint/enforce-foo-bar": "error",
+        "eslint-kint/enforce-params-specified": "error",
       },
       languageOptions: {
         globals: {
           myGlobal: "readonly",
-        },
-        parserOptions: {
-          ecmaFeatures: {
-            jsx: true,
-          },
         },
       },
     },
   ],
 });
 
-export default plugin;
+module.exports = plugin;
