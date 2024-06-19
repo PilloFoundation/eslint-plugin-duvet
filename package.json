@@ -1,0 +1,10 @@
+{
+  "name": "@kint/eslint-plugin-kint",
+  "version": "0.0.1",
+  "description": "Runs kint validation rules as part of eslint",
+  "main": "eslint-plugin-kint.js",
+  "license" : "MIT",
+  "peerDependencies": {
+    "eslint": ">=9.0.0"
+  }
+}
