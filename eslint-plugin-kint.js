@@ -1,6 +1,5 @@
 const fs = require("fs");
 
-const fooBarRule = require("./enforce-foo-bar");
 const paramsRules = require("./enforce-params-specified");
 
 const pkg = JSON.parse(
@@ -21,7 +20,6 @@ const plugin = {
   },
   configs: {},
   rules: {
-    "enforce-foo-bar": fooBarRule,
     "enforce-params-specified": paramsRules,
   },
 };
@@ -34,7 +32,6 @@ Object.assign(plugin.configs, {
         "eslint-kint": plugin,
       },
       rules: {
-        "eslint-kint/enforce-foo-bar": "error",
         "eslint-kint/enforce-params-specified": "error",
       },
       languageOptions: {
