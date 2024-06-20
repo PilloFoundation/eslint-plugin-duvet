@@ -1,16 +1,21 @@
 {
   "name": "@duvetjs/eslint-plugin-duvet",
   "version": "0.0.5",
-  "type": "module",
+  "type": "commonjs",
   "description": "Runs duvet validation rules as part of eslint",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./dist",
-    "build:esnext": "tsc --outDir dist",
-    "build": "yarn clean && yarn build:esnext",
+    "build": "yarn clean && tsc -b tsconfig.json",
     "test": "echo \"No tests yet\" && exit 0",
     "prepublishOnly": "yarn build"
   },
@@ -41,6 +46,10 @@
   },
   "files": [
     "dist",
+    "docs",
+    "index.d.ts",
+    "rules.d.ts",
+    "package.json",
     "README.md",
     "LICENSE"
   ]

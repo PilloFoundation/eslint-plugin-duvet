@@ -1,18 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "ESNext",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "declaration": true,
     "outDir": "./dist",
     "rootDir": "./lib",
-    "moduleResolution": "Bundler",
+    "declaration": false, // true
+    "declarationMap": false, // true
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "esModuleInterop": true,
+    "lib": ["ES2021"],
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "noImplicitReturns": true,
+    "paths": {},
+    "pretty": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2021"
   },
-  "include": ["lib"],
+  "include": ["lib", "typings"],
   "exclude": ["node_modules", "dist"]
 }

@@ -1,4 +1,5 @@
 import fs from "fs";
+import path from "path";
 
 import { TSESLint } from "@typescript-eslint/utils";
 import { RuleModule } from "@typescript-eslint/utils/ts-eslint";
@@ -14,7 +15,7 @@ interface Plugin extends Omit<ESLint.Plugin, "rules" | "configs"> {
 }
 
 const pkg = JSON.parse(
-  fs.readFileSync(new URL("./package.json", import.meta.url), "utf8")
+  fs.readFileSync(path.resolve(__dirname, "./package.json"), "utf8")
 );
 
 const plugin: Plugin = {
