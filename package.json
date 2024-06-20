@@ -1,17 +1,11 @@
 {
   "name": "@duvetjs/eslint-plugin-duvet",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "commonjs",
   "description": "Runs duvet validation rules as part of eslint",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./package.json": "./package.json"
-  },
+  "exports": "./dist/index.js",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./dist",
@@ -28,10 +22,6 @@
     "eslint": "^9.5.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.24.7",
-    "@babel/core": "^7.24.7",
-    "@babel/preset-env": "^7.24.7",
-    "@babel/preset-typescript": "^7.24.7",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20.14.5",
     "@typescript-eslint/rule-tester": "^7.13.1",
