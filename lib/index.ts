@@ -1,14 +1,16 @@
 import fs from "fs";
 
+import { TSESLint } from "@typescript-eslint/utils";
 import { RuleModule } from "@typescript-eslint/utils/ts-eslint";
+
 import { ESLint } from "eslint";
 
 import { rules } from "./rules";
 
 type RuleKey = keyof typeof rules;
-
-interface Plugin extends Omit<ESLint.Plugin, "rules"> {
+interface Plugin extends Omit<ESLint.Plugin, "rules" | "configs"> {
   rules: Record<RuleKey, RuleModule<any, any, any>>;
+  configs: Record<string, TSESLint.FlatConfig.ConfigArray>;
 }
 
 const pkg = JSON.parse(
@@ -22,25 +24,23 @@ const plugin: Plugin = {
     version: pkg.version,
   },
   rules,
+  configs: {},
 };
 
-// assign configs here so we can reference `plugin`
-plugin.configs = {
-  recommended: [
-    {
-      plugins: {
-        "eslint-kint": plugin as unknown as ESLint.Plugin, // Because of the Plugin interface decleared earlier
-      },
-      rules: {
-        "eslint-kint/enforce-params-specified": "error",
-      },
-      languageOptions: {
-        globals: {
-          myGlobal: "readonly",
-        },
+plugin.configs["recommended"] = [
+  {
+    plugins: {
+      "eslint-kint": plugin,
+    },
+    rules: {
+      "eslint-kint/enforce-params-specified": "error",
+    },
+    languageOptions: {
+      globals: {
+        myGlobal: "readonly",
       },
     },
-  ],
-};
+  },
+];
 
 export default plugin;

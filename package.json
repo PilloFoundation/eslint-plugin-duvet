@@ -22,6 +22,7 @@
     "@types/node": "^20.14.5",
     "@typescript-eslint/rule-tester": "^7.13.1",
     "eslint-doc-generator": "^1.7.1",
+    "eslint-plugin-eslint-plugin": "^6.1.0",
     "rimraf": "^5.0.7",
     "typescript": "^5.4.5"
   },
