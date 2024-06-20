@@ -1,40 +1,18 @@
-import { TSESLint } from "@typescript-eslint/utils";
-import { RuleModule } from "@typescript-eslint/utils/ts-eslint";
+import { Linter } from "@typescript-eslint/utils/ts-eslint";
 
-import { ESLint } from "eslint";
+import base from "./configs/base";
+import recommended from "./configs/recommended";
 
 import { rules } from "./rules";
 
-type RuleKey = keyof typeof rules;
-interface Plugin extends Omit<ESLint.Plugin, "rules" | "configs"> {
-  rules: Record<RuleKey, RuleModule<any, any, any>>;
-  configs: Record<string, TSESLint.FlatConfig.ConfigArray>;
-}
-
-const plugin: Plugin = {
-  // preferred location of name and version
+export = {
   meta: {
     name: "@duvetjs/eslint-plugin-duvet",
-    version: "0.0.7",
+    version: "0.0.13",
+  },
+  configs: {
+    base,
+    recommended,
   },
   rules,
-  configs: {},
-};
-
-plugin.configs["recommended"] = [
-  {
-    plugins: {
-      "eslint-duvet": plugin,
-    },
-    rules: {
-      "eslint-duvet/enforce-params-specified": "error",
-    },
-    languageOptions: {
-      globals: {
-        myGlobal: "readonly",
-      },
-    },
-  },
-];
-
-export default plugin;
+} satisfies Linter.Plugin;

@@ -11,3 +11,7 @@ Modify your `eslint.config.mjs` as follows
 ```
 TODO
 ```
+
+
+### TODO
+- Match typescript/eslint-plugin configs and recommended

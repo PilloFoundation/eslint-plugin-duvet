@@ -2,8 +2,8 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./lib",
-    "declaration": false, // true
-    "declarationMap": false, // true
+    "declaration": true, // true
+    "declarationMap": true, // true
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
