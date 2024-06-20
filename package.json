@@ -1,6 +1,6 @@
 {
   "name": "@duvetjs/eslint-plugin-duvet",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "type": "commonjs",
   "description": "Runs duvet validation rules as part of eslint",
   "main": "./dist/index.js",
