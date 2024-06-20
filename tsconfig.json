@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "rootDir": "lib",
+    "outDir": "dist",
+    "module": "ES2020",
+    "target": "ES2020",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true
+  },
+  "include": ["lib"]
+}
