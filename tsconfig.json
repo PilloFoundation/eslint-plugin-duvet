@@ -1,14 +1,18 @@
 {
   "compilerOptions": {
-    "rootDir": "lib",
-    "outDir": "dist",
-    "module": "ES2020",
-    "target": "ES2020",
-    "moduleResolution": "Bundler",
-    "esModuleInterop": true,
+    "target": "es6",
+    "module": "ESNext",
     "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "declaration": true
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": "./lib",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["lib"]
+  "include": ["lib"],
+  "exclude": ["node_modules", "dist"]
 }

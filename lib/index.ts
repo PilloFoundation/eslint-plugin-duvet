@@ -30,10 +30,10 @@ const plugin: Plugin = {
 plugin.configs["recommended"] = [
   {
     plugins: {
-      "eslint-kint": plugin,
+      "eslint-duvet": plugin,
     },
     rules: {
-      "eslint-kint/enforce-params-specified": "error",
+      "eslint-duvet/enforce-params-specified": "error",
     },
     languageOptions: {
       globals: {

@@ -14,7 +14,7 @@ jobs:
     name: Publish NPM package
     runs-on: ubuntu-latest
     # Avoid publishing in forks
-    if: github.repository == 'TSKint/eslint-plugin-kint'
+    if: github.repository == 'PilloFoundation/eslint-plugin-duvet'
     steps:
       - name: Checkout
         uses: actions/checkout@v4

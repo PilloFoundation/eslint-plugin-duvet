@@ -1,9 +1,9 @@
-# eslint-plugin-kint
-Contains rules that will keep you safer and happier while using **TSKint**.
+# eslint-plugin-duvet
+Contains rules that will keep you safer and happier while using **duvet**.
 
 ### Install
 ```
-yarn add @kint/eslint-plugin-kint --dev
+yarn add @duvetjs/eslint-plugin-duvet --dev
 ```
 
 ### Usage
