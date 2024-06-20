@@ -1,6 +1,3 @@
-import fs from "fs";
-import path from "path";
-
 import { TSESLint } from "@typescript-eslint/utils";
 import { RuleModule } from "@typescript-eslint/utils/ts-eslint";
 
@@ -14,15 +11,11 @@ interface Plugin extends Omit<ESLint.Plugin, "rules" | "configs"> {
   configs: Record<string, TSESLint.FlatConfig.ConfigArray>;
 }
 
-const pkg = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "./package.json"), "utf8")
-);
-
 const plugin: Plugin = {
   // preferred location of name and version
   meta: {
-    name: pkg.name,
-    version: pkg.version,
+    name: "@duvetjs/eslint-plugin-duvet",
+    version: "0.0.7",
   },
   rules,
   configs: {},
