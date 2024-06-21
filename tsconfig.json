@@ -2,8 +2,8 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./lib",
-    "declaration": true, // true
-    "declarationMap": true, // true
+    "declaration": false, // unforunately, to make importing easier in other projects, we need to set this to false
+    "declarationMap": false, // true
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,

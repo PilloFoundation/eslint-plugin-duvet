@@ -1,18 +1,21 @@
 import { Linter } from "@typescript-eslint/utils/ts-eslint";
-
-import base from "./configs/base";
-import recommended from "./configs/recommended";
-
-import { rules } from "./rules";
+import { enforceParamsSpecified } from "./rules/enforce-params-specified";
 
 export = {
   meta: {
     name: "@duvetjs/eslint-plugin-duvet",
-    version: "0.0.13",
+    version: "0.0.21",
+  },
+  rules: {
+    "@duvetjs/eslint-plugin-duvet/enforce-params-specified":
+      enforceParamsSpecified,
   },
   configs: {
-    base,
-    recommended,
+    recommended: {
+      plugins: ["@duvetjs/eslint-plugin-duvet"],
+      rules: {
+        "@duvetjs/eslint-plugin-duvet/enforce-params-specified": "error",
+      },
+    },
   },
-  rules,
 } satisfies Linter.Plugin;
