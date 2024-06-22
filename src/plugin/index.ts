@@ -13,7 +13,6 @@ export = {
     version: version,
   },
   rules: {
-    "@duvetjs/eslint-plugin-duvet/enforce-params-specified":
-      enforceParamsSpecified,
+    "enforce-params-specified": enforceParamsSpecified,
   },
 } satisfies Linter.Plugin;
