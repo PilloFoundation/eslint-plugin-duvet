@@ -1,21 +1,19 @@
 import { Linter } from "@typescript-eslint/utils/ts-eslint";
 import { enforceParamsSpecified } from "./rules/enforce-params-specified";
 
+// Must stay require not import
+const { name, version } = require("../../package.json") as {
+  name: string;
+  version: string;
+};
+
 export = {
   meta: {
-    name: "@duvetjs/eslint-plugin-duvet",
-    version: "0.0.21",
+    name: name,
+    version: version,
   },
   rules: {
     "@duvetjs/eslint-plugin-duvet/enforce-params-specified":
       enforceParamsSpecified,
-  },
-  configs: {
-    recommended: {
-      plugins: ["@duvetjs/eslint-plugin-duvet"],
-      rules: {
-        "@duvetjs/eslint-plugin-duvet/enforce-params-specified": "error",
-      },
-    },
   },
 } satisfies Linter.Plugin;

@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./lib",
-    "declaration": false, // unforunately, to make importing easier in other projects, we need to set this to false
-    "declarationMap": false, // true
-    "resolveJsonModule": true,
+    "rootDir": "src",
+    "declaration": true,
+    "declarationMap": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -18,8 +17,10 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "ES2021"
+    "target": "ES2021",
+    "composite": true,
+    "resolveJsonModule": true
   },
-  "include": ["lib", "typings"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }
