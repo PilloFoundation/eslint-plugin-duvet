@@ -70,7 +70,7 @@ const VALIDATORS = {
 } as const;
 
 /**
- * Get the custom parameters from the filename/
+ * Get the custom parameters from the filename. That duvet will extract
  * @param {string} filename
  * @returns
  */
@@ -80,11 +80,12 @@ function extractCustomParamsFromFilename(filename: string) {
   return matches;
 }
 
+// TODO: Point to our rules documentation
 export const createRule = ESLintUtils.RuleCreator(
   (name) => `https://my-website.io/eslint/${name}`
 );
 
-export const enforceParamsSpecified = createRule({
+export default createRule({
   name: "enforce-params-specified",
   meta: {
     type: "problem",

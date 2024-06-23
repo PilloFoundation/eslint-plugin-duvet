@@ -7,9 +7,9 @@ yarn add @duvetjs/eslint-plugin-duvet --dev
 ```
 
 ### Usage
-Modify your `eslint.config.mjs` as follows
+Modify your `eslint.config.js` as follows
 ```
-TODO
+
 ```
 
 

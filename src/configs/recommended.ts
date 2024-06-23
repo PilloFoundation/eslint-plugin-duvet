@@ -8,6 +8,7 @@ export default (plugin: FlatConfig.Plugin): FlatConfig.ConfigArray => [
     name: "duvet-eslint/recommended",
     rules: {
       "@duvetjs/eslint-plugin-duvet/enforce-params-specified": "error",
+      "@duvetjs/eslint-plugin-duvet/enforce-define-endpoint-exported": "warn",
     },
   },
 ];
